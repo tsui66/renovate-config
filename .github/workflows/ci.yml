@@ -1,0 +1,34 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  style:
+    name: Check style
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout git repository
+        uses: actions/checkout@v3
+      - name: Install dependencies with Yarn
+        run: yarn install --immutable --immutable-cache
+      - name: Check style
+        run: yarn run style
+  publish:
+    name: Publish
+
+    runs-on: ubuntu-latest
+
+    needs: [style]
+
+    steps:
+      - name: Checkout git repository
+        uses: actions/checkout@v3
+      - name: Install dependencies with Yarn
+        run: yarn install --immutable --immutable-cache
+      - name: Run semantic release
+        run: yarn run semantic-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB }}
+          NPM_TOKEN: ${{ secrets.NPM }}

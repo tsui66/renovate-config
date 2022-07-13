@@ -1,0 +1,71 @@
+{
+	"name": "@tsui66/renovate-config",
+	"version": "0.0.0-development",
+	"bugs": {
+		"url": "https://github.com/tsui66/renovate-config/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/tsui66/renovate-config.git"
+	},
+	"license": "Apache-2.0",
+	"author": {
+		"name": "Nova Tsui",
+		"email": "quinton.xu@gmail.com",
+		"url": "https://blog.hasha.io"
+	},
+	"scripts": {
+		"style": "prettier --check ."
+	},
+	"devDependencies": {
+		"prettier": "2.7.1",
+		"semantic-release": "19.0.3"
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"packageManager": "yarn@3.2.1",
+	"renovate-config": {
+		"default": {
+			"$schema": "https://docs.renovatebot.com/renovate-schema.json",
+			"extends": [
+				"config:base",
+				":semanticCommitTypeAll(build)",
+				":disableRateLimiting",
+				":automergeMinor",
+				":automergeBranch"
+			],
+			"labels": [
+				"dependencies"
+			],
+			"semanticCommits": true,
+			"packageRules": [
+				{
+					"groupName": "prisma",
+					"matchPackagePatterns": [
+						"^@prisma/",
+						"^prisma$"
+					]
+				},
+				{
+					"groupName": "ts-jest",
+					"matchPackagePatterns": [
+						"(ts\\-)?jest"
+					]
+				},
+				{
+					"groupName": "fontawesome",
+					"packagePatterns": [
+						"^@fortawesome/"
+					]
+				},
+				{
+					"groupName": "nestjs",
+					"packagePatterns": [
+						"^@nestjs/"
+					]
+				}
+			]
+		}
+	}
+}
