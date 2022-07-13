@@ -46,6 +46,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@hashaio/renovate-config@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "@hashaio/renovate-config@workspace:."
+  dependencies:
+    prettier: 2.7.1
+    semantic-release: 19.0.3
+  languageName: unknown
+  linkType: soft
+
 "@isaacs/string-locale-compare@npm:^1.1.0":
   version: 1.1.0
   resolution: "@isaacs/string-locale-compare@npm:1.1.0"
@@ -511,15 +520,6 @@ __metadata:
   checksum: ad87447820dd3f24825d2d947ebc03072b20a42bfc96cbafec16bff8bbda6c1a81fcb0be56d5b21968560c5359a0af4038a68ba150c3e1694fe4c109a063bed8
   languageName: node
   linkType: hard
-
-"@tsui66/renovate-config@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "@tsui66/renovate-config@workspace:."
-  dependencies:
-    prettier: 2.7.1
-    semantic-release: 19.0.3
-  languageName: unknown
-  linkType: soft
 
 "@types/minimist@npm:^1.2.0":
   version: 1.2.2

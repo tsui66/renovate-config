@@ -1,4 +1,4 @@
 {
 	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
-	"extends": ["@tuis66"]
+	"extends": ["@hashaio"]
 }
